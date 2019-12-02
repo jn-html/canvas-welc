@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="400" height="400">TTTT</canvas>
+
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+
+        function draw() {
+            ctx.fillStyle = "#BADA55";
+            ctx.fillRect(100, 100, 50, 50);
+        };
+
+        function drawCircle() {
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(40, 40, 25, 0, Math.PI * 2, false);
+            ctx.fill();
+        };
+
+        class Block {
+            constructor(x, y, size) {
+                this.x = x;
+                this.y =y;
+                this.size = size
+            }
+
+            draw() {
+            ctx.fillStyle = "#BADA55";
+            ctx.fillRect(this.x, this.y, this.size, this.size);
+            };
+
+            info() {
+                console.log('coucou');
+            };
+        };
+
+        const block = new Block(150, 150, 25);
+
+    </script>
+</body>
+</html>
